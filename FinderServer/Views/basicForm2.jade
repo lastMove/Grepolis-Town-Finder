@@ -1,0 +1,53 @@
+include layout
+block content
+
+  form.form-horizontal
+    fieldset
+      // Form Name
+      legend Form Name
+      // Text input
+      .form-group
+        label.col-md-2.control-label(for='x') X pos
+        .col-md-2
+          input#y.form-control.input-md(name='x', type='text', placeholder='450', required='')
+          span.help-block help
+      // Text input
+      .form-group
+        label.col-md-2.control-label(for='y') Y pos
+        .col-md-2
+          input#y.form-control.input-md(name='y', type='text', placeholder='450', required='')
+          span.help-block help
+    fieldset.collapsible
+      legend form 2
+      // Text input
+      .form-group
+        label.col-md-2.control-label(for='range') Range
+        .col-md-2
+          input#range.form-control.input-md(name='range', type='text', placeholder='50', required='')
+          span.help-block help
+
+      // Button Drop Down
+      .form-group
+        label.col-md-4.control-label(for='alliance') Alliances
+        .col-md-6
+          .input-group
+            input#alliance.form-control(name='alliance', placeholder='Les larmes', type='text', required='')
+            .input-group-btn
+              button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+                | Action
+                span.caret
+              ul.dropdown-menu.pull-right
+                li
+                  a(href='#') Inclure
+                li
+                  a(href='#') Exclure
+      // Button
+      .form-group
+        label.col-md-2.control-label(for='submit')
+        .col-md-4
+          button#submit.btn.btn-success(name='submit') Valider
+  if data.length > 0
+    include table
+  if error
+    div
+      #{error}

@@ -1,0 +1,22 @@
+table#table_id.display
+				thead
+					tr
+						th town Name
+						th Pos X
+						th Pos Y
+						th points
+						th player Name
+						th player points
+						th allianceName
+				tbody
+					each i in data
+						tr
+							td= i.townName
+							td= i.townX
+							td= i.townY
+							td= i.townPoints
+							td= i.playerName
+							td= i.playerPoints
+							td= i.allianceName
+
+script $(document).ready( function () { $('#table_id').DataTable(); } );

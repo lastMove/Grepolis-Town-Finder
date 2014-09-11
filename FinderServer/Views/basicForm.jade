@@ -1,0 +1,48 @@
+include layout
+block content
+
+  form.form-horizontal
+    fieldset
+      // Form Name
+      legend Advanced Victim Finder
+      // Text input
+      .control-group
+        label.control-label(for='x') X position
+        .controls
+          input#X.input-mini(name='x', type='text', placeholder='450', required='')
+      // Text input
+      .control-group
+        label.control-label(for='y') Y position
+        .controls
+          input#Y.input-mini(name='y', type='text', placeholder='450', required='Y')
+      // Text input
+      .control-group
+        label.control-label(for='range') range
+        .controls
+          input#range.input-mini(name='range', type='text', placeholder='50', required='')
+          p.help-block help
+      // Button Drop Down
+      .control-group
+        label.control-label(for='alliance') Alliance
+        .controls
+          .input-append
+            input#Alliance.input-xlarge(name='alliance', placeholder='placeholder', type='text')
+            .btn-group
+              button.btn.dropdown-toggle(data-toggle='dropdown')
+                | Action
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Exclure
+                li
+                  a(href='#') Inclure
+      // Select Basic
+      .control-group
+        label.control-label(for='selectbasic') Options
+        .controls
+          select#selectbasic.input-medium(name='selectbasic')
+            option All
+            option Ghosts
+    button(class="btn btn-success" type="submit" style="width:155px;") haha
+  if data
+    include table
